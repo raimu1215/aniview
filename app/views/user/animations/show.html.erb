@@ -1,0 +1,24 @@
+<div class="container">
+      <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+          　 <div class="col-auto">
+              <p><%= image_tag @animation.get_image, size:'150x200' %></p>
+          　 </div>
+              <!--<アニメ名>-->
+              <div class="col-auto">
+                <h4><strong><%= @animation.anime_title %></strong></h4>
+              </div>
+              <!--<原作者>-->
+              <div class="form-group">
+                <h5><strong><%= @animation.original_author %></strong></h5>
+              </div>
+              <!--<放映日>-->
+              <div class="form-group">
+                <h5><strong><%= @animation.onair_date %></strong></h5>
+              </div>
+              
+              <%= link_to “レビューする”, new_review_path %>
+              
+          </div>
+      </div>
+</div>

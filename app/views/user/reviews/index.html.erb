@@ -1,0 +1,13 @@
+<div class="container">
+      <div class="offset-2 col-10 py-sm-4 px-sm-4">
+          <h5><strong><%= @animation.anime_title %>のレビュー</strong></h5><p>全<%= @reviews.count %>件</p>
+      </div>
+      <div class="row">
+            <% @reviews.each do |review| %>
+            <p><%= review.title(@animation.id) %></p>
+            <p><%= review.body(@animation.id) %></p>
+            <% end %>
+      </div>
+      
+</div>
+    <%= paginate  %>

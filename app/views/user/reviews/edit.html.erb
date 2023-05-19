@@ -1,0 +1,29 @@
+<div class="container px-5 px-sm-0">
+  <%= render 'users/user', users: @users, newbook: @newreview %>
+
+    <div class="col-md-8 offset-md-1">
+        <h1>レビュー内容の編集</h1>
+          <%= form_with model: @review do |f| %>
+          
+            <p>タイトル</p>
+              <div class="form-group">
+                <%= f.text_field :title %>
+              </div>
+              
+            <p>本文</p>
+              <div class="form-group">
+                <%= f.text_area :body %>
+              </div>
+              
+            <%= f.submit 'レビューを再投稿', class: "btn-success" %>
+                
+            <div class="btn btn-sm btn-danger">
+            <% if @review.user == current_user %>
+            <%=link_to review_path(@review.id), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+              レビューを削除
+            <% end %>
+            <% end %>
+            </div>
+          <% end %>
+    </div>
+</div>

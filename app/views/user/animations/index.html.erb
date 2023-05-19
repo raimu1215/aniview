@@ -1,0 +1,15 @@
+<div class="container">
+      <div class="offset-2 col-10 py-sm-4 px-sm-4">
+          <h5><strong>アニメ一覧</strong></h5><p>全<%= @animations.count %>件</p>
+      </div>
+      <div class="row">
+            <% @animations.each do |animation| %>
+            <p><%= link_to animation_path(animation.id) do %>
+            <%= image_tag animation.get_image, size:'150x200' %></p>
+            <% end %>
+            <p><%=link_to animation.anime_title, animation_path(animation.id)%></p>
+            <% end %>
+      </div>
+      
+</div>
+    <%= paginate  %>
